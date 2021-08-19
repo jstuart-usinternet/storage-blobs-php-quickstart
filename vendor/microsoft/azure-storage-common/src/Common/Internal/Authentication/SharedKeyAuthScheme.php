@@ -305,7 +305,7 @@ class SharedKeyAuthScheme implements IAuthScheme
         $signedKey = $this->getAuthorizationHeader(
             $requestHeaders,
             $request->getUri(),
-            \GuzzleHttp\Psr7\parse_query(
+            \GuzzleHttp\Psr7\Query::parse(
                 $request->getUri()->getQuery()
             ),
             $request->getMethod()
